@@ -1,0 +1,16 @@
+Nothing much yet - will be updated with the release.
+
+For the very brave:
+
+Install the boost python library and include files
+in the appropriate directory.
+
+Install OSG 0.9.9.
+
+run from within this directory:
+
+python setup.py build
+python setup.py install
+
+Checked on Linux 2.6 (gcc 3.3), Windows XP (VS 7.1) and
+Mac OSX 10.4 (XCode 2.0)

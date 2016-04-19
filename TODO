@@ -1,0 +1,70 @@
+To be done for the first beta, in no particular order:
+
+- Write documentation
+- Write more unittest functions
+- Define more docstrings
+- Check error handling in callback functions!!!!
+- dynamic casting in support libraries - sort out asCullVisitor
+- check outstream for ArgumentParser (writeErrorMessages, write etc)
+___________________________________________________________________________
+
+
+The folling files are not yet done
+
+osg:
+    FrameBufferObject
+    GL2Extensions
+    GraphicsContext
+    GraphicsThread
+    Program
+    ProxyNode
+    RefNodePath
+    Shader
+    ShadowVolumeOccluder
+    TexEnvFilter
+    TriangleIndexFunctor
+    UByte4
+    Uniform
+
+osgGA:
+    AnimationPathManipulator
+    DriveManipulator
+    FlightManipulator
+    GUIEventHandlerVisitor
+    KeySwitchMatrixManipulator
+    NodeTrackerManipulator
+    SetSceneViewVisitor
+    StateSetManipulator
+    TerrainManipulator
+    TrackballManipulator
+
+osgParticle:
+    AngularAccelOperator
+    ExplosionEffect
+    FireEffect
+    Interpolator
+    LinearInterpolator
+    ParticleEffect
+    SmokeEffect
+
+osgProducer:
+    EventAdapter
+    KeyboardMouseCallback
+    ViewerEventHandler
+
+osgSim:
+    ColorRange
+    DOFTransform
+    GeographicLocation
+    LightPointSystem
+    MultiSwitch
+    ScalarBar
+    ScalarsToColors
+    Sector
+    SphereSegment
+    VisibilityGroup
+
+osgUtil:
+    GLObjectsVisitor
+    Statistics
+    TransformAttributeFunctor
