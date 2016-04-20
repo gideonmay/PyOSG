@@ -1,6 +1,9 @@
 ADD_LIBRARY(osgGA SHARED
         osgGA.cpp
         GUIEventHandler.cpp
+        GUIActionAdapter.cpp
+        GUIEventAdapter.cpp
+        CameraManipulator.cpp
         )
 
 TARGET_LINK_LIBRARIES(osgGA ${OPENSCENEGRAPH_LIBRARIES} ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})

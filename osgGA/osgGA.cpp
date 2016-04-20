@@ -92,10 +92,10 @@ namespace PyOSG {
 
 void __init_osgGA()
 {
-//    init_GUIActionAdapter();
-//    init_GUIEventAdapter();
+    init_GUIActionAdapter();
+    init_GUIEventAdapter();
     init_GUIEventHandler();
-//    init_MatrixManipulator();
+    init_MatrixManipulator();
 
 
 #if 0
