@@ -22,6 +22,22 @@ void init_ViewerBase()
                  &osgViewer::ViewerBase::run)
             .def("done",
                  &osgViewer::ViewerBase::done)
+            .def("setThreadingModel",
+                 &osgViewer::ViewerBase::setThreadingModel)
             ;
+
+#   define OSG_ENUM(VALUE) tmodel.value(#VALUE, osgViewer::ViewerBase::VALUE)
+    enum_<osgViewer::ViewerBase::ThreadingModel> tmodel("ThreadingModel");
+
+    OSG_ENUM(SingleThreaded);
+    OSG_ENUM(CullDrawThreadPerContext);
+    OSG_ENUM(ThreadPerContext);
+    OSG_ENUM(DrawThreadPerContext);
+    OSG_ENUM(CullThreadPerCameraDrawThreadPerContext);
+    OSG_ENUM(ThreadPerCamera);
+    OSG_ENUM(AutomaticSelection);
+
+    tmodel.export_values();
+
 }
 } // namespace PyOSGViewer

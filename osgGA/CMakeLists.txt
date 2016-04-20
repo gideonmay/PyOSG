@@ -1,5 +1,6 @@
 ADD_LIBRARY(osgGA SHARED
         osgGA.cpp
+        GUIEventHandler.cpp
         )
 
 TARGET_LINK_LIBRARIES(osgGA ${OPENSCENEGRAPH_LIBRARIES} ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})

@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 from PyOSG import osgDB
-from PyOSG import osgViewer
 from PyOSG import osgGA
-# from PyOSG import xyzUtil
 from PyOSG import osgViewer
 
 def main():
@@ -33,11 +31,14 @@ def main():
     sch = osgViewer.ScreenCaptureHandler()
     sch.setCaptureOperation(wtf)
 
+    bs = loadedModel.getBound()
+    print ("Bounding sphere = ", bs)
+
     simtime = 0.0
     while not viewer.done():
         # print(simtime)
         viewer.frame(simtime)
-        sch.captureNextFrame(viewer)
+        # sch.captureNextFrame(viewer)
 
         # osr.render()
         # osr.writeImageFile(("dump%f.png" % simtime))

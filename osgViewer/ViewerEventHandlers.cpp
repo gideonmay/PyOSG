@@ -25,6 +25,7 @@ void init_ViewerEventHandlers() {
 
     class_<osgViewer::ScreenCaptureHandler::CaptureOperation,
             osg::ref_ptr<osgViewer::ScreenCaptureHandler::CaptureOperation>,
+            bases <osg::Referenced>,
             boost::noncopyable >
             capture_operation("CaptureOperation", no_init);
 
@@ -33,8 +34,8 @@ void init_ViewerEventHandlers() {
             osg::ref_ptr<osgViewer::ScreenCaptureHandler::WriteToFile>,
             bases<osgViewer::ScreenCaptureHandler::CaptureOperation>,
             boost::noncopyable >
-
             write_to_file("WriteToFile", no_init);
+
     write_to_file
             .def(init<const std::string&, const std::string&>())
             ;

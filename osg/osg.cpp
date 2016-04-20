@@ -145,6 +145,8 @@ namespace PyOSG {
     void init_CameraNode(); /* Deprecated */
     void init_Shader();
     void init_Program();
+    void init_Camera();
+    void init_View();
 
     const char * buildinfo();
 }
@@ -222,26 +224,26 @@ void __init_osg()
 
     init_Referenced();
     init_Object();
-//    init_Timer();
-//    init_CopyOp();
-//    init_ApplicationUsage();
-//    init_ArgumentParser();
-//    init_Notify();
-//    init_NodeVisitor();
-//    init_NodeCallback();
-//    init_FrameStamp();
-//    init_BoundingBox();
-//    init_BoundingSphere();
+    init_Timer();
+    init_CopyOp();
+    init_ApplicationUsage();
+    init_ArgumentParser();
+    init_Notify();
+    init_NodeVisitor();
+    init_NodeCallback();
+    init_FrameStamp();
+    init_BoundingBox();
+    init_BoundingSphere();
 //    init_State();
 //    init_CullSettings();
 //    init_CullingSet();
 //    init_CullStack();
 //    init_DisplaySettings();
-//    init_math();
-//    init_Vec2();
-//    init_Vec3();
-//    init_Vec3d();
-//    init_Vec4();
+    init_math();
+    init_Vec2();
+    init_Vec3();
+    init_Vec3d();
+    init_Vec4();
 //    init_Quat();
 //    init_UByte4();
 //    init_Plane();
@@ -258,7 +260,7 @@ void __init_osg()
 //    init_ArrayVec2();
 //    init_ArrayVec3();
 //    init_ArrayVec4();
-//    init_matrix();
+    init_matrix();
 //    init_Drawable();
 //    init_Drawable2();
 //    init_Drawable3();
@@ -334,6 +336,8 @@ void __init_osg()
 //    init_PointSprite();
 //    init_Shader();
 //    init_Program();
+    init_Camera();
+    init_View();
 
     def("GetVersion",
         (const char *(*)()) &osgGetVersion,
@@ -369,7 +373,6 @@ BOOST_PYTHON_MODULE(_osg)
     scope().attr("__credits__") = 
         "Based on the following libraries :\n"
         "    OpenSceneGraph 3.4 (http://www.openscenegraph.org/)\n"
-        "    OpenThreads (http://openthreads.sourceforge.net/)\n"
         "    Boost Python Library V2 (1.33.0) (http://www.boost.org/)\n";
     scope().attr("__build__") = buildinfo();
     __init_osg();
