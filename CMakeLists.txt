@@ -63,7 +63,6 @@ IF(PYTHON)
         )
     add_custom_target(target ALL DEPENDS ${OUTPUT}/timestamp)
     install(CODE "execute_process(COMMAND ${PYTHON} ${SETUP_PY} install)")
-    # MESSAGE(FATAL_ERROR "PYTHON FOUND")
 ENDIF()
 
 add_custom_target(install_${PROJECT_NAME}

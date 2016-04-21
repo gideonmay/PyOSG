@@ -1,14 +1,3 @@
-// Copyright (C) 2002-2003 Gideon May (gideon@computer.org)
-//
-// Permission to copy, use, sell and distribute this software is granted
-// provided this copyright notice appears in all copies.
-// Permission to modify the code and to distribute modified code is granted
-// provided this copyright notice appears in all copies, and a notice
-// that the code was modified is included with the copyright notice.
-//
-// This software is provided "as is" without express or implied warranty,
-// and with no claim as to its suitability for any purpose.
-
 #include <boost/python.hpp>
 
 #include <string>
@@ -74,10 +63,6 @@ void init_Object()
 
     scope object_scope(obj);
     obj
-#if 0
-        .def(init<const osg::Object&>())
-        .def(init<const osg::Object&, const osg::CopyOp&>())
-#endif
         .def("cloneType",
             &osg::Object::cloneType,
             return_value_policy<manage_osg_object>())

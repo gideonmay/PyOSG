@@ -10,9 +10,7 @@
 // and with no claim as to its suitability for any purpose.
 
 #include <boost/python/class.hpp>
-#include <boost/python/call.hpp>
 #include <boost/python/call_method.hpp>
-#include <boost/python/ptr.hpp>
 #include <boost/python/list.hpp>
 #include <boost/python/return_value_policy.hpp>
 #include <boost/python/copy_const_reference.hpp>
@@ -130,10 +128,12 @@ class_Node * NodeClass = NULL;
 void init_Node()
 {
 
+#ifdef OSG_OLD // TODO
     class_<osg::NodePath>("NodePath")
         .def("__iter__", iterator<osg::NodePath, return_value_policy<manage_osg_object> >())
         .def("__len__", &osg::NodePath::size)
         ;
+#endif
 
     NodeClass = new class_Node("Node",
             "Base class for all internal nodes in the scene graph.\n"

@@ -2,9 +2,8 @@
 
 #include <osg/ApplicationUsage>
 
-#include <string>
 #include <iostream>
-#include <boost/ref.hpp>
+#include "held_ptr.hpp"
 
 using namespace boost::python;
 
@@ -111,12 +110,11 @@ namespace PyOSG {
 
 void init_ApplicationUsage()
 {
-    class_<osg::ApplicationUsage, boost::noncopyable> app_usage("ApplicationUsage", no_init);
+    class_<osg::ApplicationUsage, osg::ref_ptr<osg::ApplicationUsage>, boost::noncopyable>
+            app_usage("ApplicationUsage", no_init);
 
-    scope app_usage_scope(app_usage);
 
     // XXX TODO
-#if 0 
     app_usage
         .def(init<>())
         .def(init<const std::string&>())
@@ -154,8 +152,8 @@ void init_ApplicationUsage()
         .def("getEnvironmentalVariables", 
             &getEnvironmentalVariables)
 
-        .def("addKeyboardMouseBinding", 
-            &osg::ApplicationUsage::addKeyboardMouseBinding)
+//        .def("addKeyboardMouseBinding",
+//            &osg::ApplicationUsage::addKeyboardMouseBinding)
         .def("getKeyboardMouseBindings", 
             &getKeyboardMouseBindings)
 
@@ -172,11 +170,13 @@ void init_ApplicationUsage()
             &MyWrite_4)
         .def("write",
             &MyWrite_5)
-#endif
         ;
 
+    scope app_usage_scope(app_usage);
+
+    enum_<osg::ApplicationUsage::Type> app_type("ApplicationUsage_Type");
+
 #   define OSG_ENUM_TYPE(VALUE) app_type.value(#VALUE, osg::ApplicationUsage::VALUE)
-    enum_<osg::ApplicationUsage::Type> app_type("Type");
     OSG_ENUM_TYPE(COMMAND_LINE_OPTION);
     OSG_ENUM_TYPE(ENVIRONMENTAL_VARIABLE);
     OSG_ENUM_TYPE(KEYBOARD_MOUSE_BINDING);

@@ -1,14 +1,3 @@
-// Copyright (C) 2002-2003 Gideon May (gideon@computer.org)
-//
-// Permission to copy, use, sell and distribute this software is granted
-// provided this copyright notice appears in all copies.
-// Permission to modify the code and to distribute modified code is granted
-// provided this copyright notice appears in all copies, and a notice
-// that the code was modified is included with the copyright notice.
-//
-// This software is provided "as is" without express or implied warranty,
-// and with no claim as to its suitability for any purpose.
-
 #ifndef PYOSG_HELD_PTR
 #define PYOSG_HELD_PTR 1
 
@@ -20,15 +9,12 @@
 #include <boost/python/to_python_converter.hpp>
 #include <boost/python/implicit.hpp>
 
-#if 0
-#include <Producer/Referenced>
-#endif
 
 #include <osg/Referenced>
 #include <osg/ref_ptr>
 #include <osg/Node>
 
-#define TEST_REF 1
+#define TEST_REF 0
 
 #if 0
 namespace boost { namespace python {

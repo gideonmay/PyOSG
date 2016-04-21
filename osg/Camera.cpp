@@ -18,7 +18,7 @@ namespace {
 namespace PyOSG {
     void init_Camera()
     {
-        class_<osg::Camera, osg::ref_ptr<osg::Camera> > camera("Camera", no_init);
+        class_<osg::Camera, osg::ref_ptr<osg::Camera>,  bases<osg::Transform> > camera("Camera", no_init);
 
         camera
             .def(init<>())
