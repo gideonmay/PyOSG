@@ -1,12 +1,6 @@
 #include <boost/python.hpp>
-#include <boost/python/detail/api_placeholder.hpp>
-
-#include <sstream>
 
 #include <osg/Array>
-
-#include <string>
-#include <iostream>
 
 #include "held_ptr.hpp"
 #include "Math.hpp"
@@ -23,11 +17,11 @@ osg::ref_ptr<osg::Array> toArray(const boost::python::tuple& vertlist)
 {
     osg::ref_ptr<osg::Array> array;
 
-    int elements = len(vertlist);
+    ssize_t elements = len(vertlist);
     if (elements == 0) return array;
 
     // Determine the type of array depending on the first element.
-    int elsize = 0;
+    ssize_t elsize = 0;
 
     const object& el = vertlist[0];
     if (check_tuple(el)) {
@@ -44,7 +38,7 @@ osg::ref_ptr<osg::Array> toArray(const boost::python::tuple& vertlist)
                 array = coords.get();
                 coords->resize(elements);
                 for (int i=0; i<elements ; i++) {
-                    (*coords)[i] = extract<int>(vertlist[i]);
+                    (*coords)[i] = extract<unsigned int>(vertlist[i]);
                 }
                 }
                 break;
@@ -86,6 +80,10 @@ osg::ref_ptr<osg::Array> toArray(const boost::python::tuple& vertlist)
                                      extract<float>(vertex[3]));
                 }
                 }
+                break;
+            default:
+                PyErr_SetString(PyExc_ValueError, "Unexpected element size in array");
+                throw_error_already_set();
                 break;
         }
     } catch(...) {

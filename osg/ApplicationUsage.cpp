@@ -113,8 +113,6 @@ void init_ApplicationUsage()
     class_<osg::ApplicationUsage, osg::ref_ptr<osg::ApplicationUsage>, boost::noncopyable>
             app_usage("ApplicationUsage", no_init);
 
-
-    // XXX TODO
     app_usage
         .def(init<>())
         .def(init<const std::string&>())
@@ -175,7 +173,6 @@ void init_ApplicationUsage()
     scope app_usage_scope(app_usage);
 
     enum_<osg::ApplicationUsage::Type> app_type("ApplicationUsage_Type");
-
 #   define OSG_ENUM_TYPE(VALUE) app_type.value(#VALUE, osg::ApplicationUsage::VALUE)
     OSG_ENUM_TYPE(COMMAND_LINE_OPTION);
     OSG_ENUM_TYPE(ENVIRONMENTAL_VARIABLE);

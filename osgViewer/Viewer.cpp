@@ -16,8 +16,31 @@ void init_Viewer()
 
     viewer
             .def(init<>())
+            .def("readConfiguration",
+                 &osgViewer::Viewer::readConfiguration)
+
+            .def("isRealized",
+                 &osgViewer::Viewer::isRealized)
+
             .def("realize",
                  &osgViewer::Viewer::realize)
+
+            .def("setStartTick",
+                 &osgViewer::Viewer::setStartTick)
+            .def("setReferenceTime",
+                 &osgViewer::Viewer::setReferenceTime)
+
+            .def("setSceneData",
+                 &osgViewer::Viewer::setSceneData)
+
+            .def("elapsedTime",
+                 &osgViewer::Viewer::elapsedTime)
+
+//            .def("getViewerFrameStamp",
+//                 &osgViewer::Viewer::getViewerFrameStamp)
+
+            .def("advance",
+                 &osgViewer::Viewer::advance)
             ;
 }
 

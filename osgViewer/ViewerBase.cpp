@@ -16,14 +16,34 @@ void init_ViewerBase()
     scope viewer_base_scope(viewer_base);
 
     viewer_base
-            .def("frame",
-                 &osgViewer::ViewerBase::frame)
-            .def("run",
-                 &osgViewer::ViewerBase::run)
-            .def("done",
-                 &osgViewer::ViewerBase::done)
+
             .def("setThreadingModel",
                  &osgViewer::ViewerBase::setThreadingModel)
+            .def("getThreadingModel",
+                 &osgViewer::ViewerBase::getThreadingModel)
+            .def("suggestBestThreadingModel",
+                 &osgViewer::ViewerBase::suggestBestThreadingModel)
+            .def("setUpThreading",
+                 &osgViewer::ViewerBase::setUpThreading)
+            .def("areThreadsRunning",
+                 &osgViewer::ViewerBase::areThreadsRunning)
+            .def("stopThreading",
+                 &osgViewer::ViewerBase::stopThreading)
+            .def("startThreading",
+                 &osgViewer::ViewerBase::startThreading)
+
+            .def("setDone",
+                 &osgViewer::ViewerBase::setDone)
+            .def("done",
+                 &osgViewer::ViewerBase::done)
+
+            .def("run",
+                 &osgViewer::ViewerBase::run)
+
+            .def("advance",
+                 &osgViewer::ViewerBase::advance)
+            .def("frame",
+                 &osgViewer::ViewerBase::frame)
             ;
 
 #   define OSG_ENUM(VALUE) tmodel.value(#VALUE, osgViewer::ViewerBase::VALUE)
