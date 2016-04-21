@@ -301,7 +301,7 @@ void __init_osg()
 //    init_TextureCubeMap();
 //    init_TextureRectangle();
 //    init_AnimationPath();
-//    init_Viewport();
+    init_Viewport();
 //    init_Light();
 //    init_PrimitiveSet();
     init_Node();

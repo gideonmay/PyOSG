@@ -6,7 +6,7 @@ ADD_LIBRARY(osg SHARED
         NodeVisitor.cpp NodeCallback.cpp FrameStamp.cpp Geode.cpp Transform.cpp Group.cpp Array.cpp
         ArrayByte.cpp ArrayFloat.cpp ArrayInt.cpp ArrayShort.cpp ArrayUByte.cpp ArrayUInt.cpp
         ArrayUShort.cpp ArrayVec2.cpp ArrayVec3.cpp ArrayVec4.cpp Quat.cpp
-        StateAttribute.cpp)
+        StateAttribute.cpp Viewport.cpp)
 TARGET_LINK_LIBRARIES(osg ${OPENSCENEGRAPH_LIBRARIES} ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
 
 IF(NOT WIN32)
