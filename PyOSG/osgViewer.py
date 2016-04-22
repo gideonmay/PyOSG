@@ -1,4 +1,5 @@
-from . import _osgViewer
+import _osg
+import _osgViewer
 
 __all__ = dir(_osgViewer)
 __ignore = ['__file__', '__module__', '__name__']

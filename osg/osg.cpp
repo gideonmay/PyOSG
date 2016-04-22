@@ -269,15 +269,15 @@ void __init_osg()
 //    init_Image();
 //    init_ImageStream();
     init_StateAttribute();
-//    init_Material();
+    init_Material();
 //    init_LineWidth();
 //    init_LineStipple();
-//    init_ColorMask();
+    init_ColorMask();
 //    init_ColorMatrix();
 //    init_ClipPlane();
 //    init_Depth();
 //    init_Stencil();
-//    init_LightModel();
+    init_LightModel();
 //    init_FrontFace();
 //    init_TexGen();
 //    init_TexMat();
@@ -302,7 +302,7 @@ void __init_osg()
 //    init_TextureRectangle();
 //    init_AnimationPath();
     init_Viewport();
-//    init_Light();
+    init_Light();
 //    init_PrimitiveSet();
     init_Node();
     init_Geode();

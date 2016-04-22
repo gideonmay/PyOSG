@@ -1,4 +1,5 @@
-from . import _xyzUtil
+import _osg
+import _xyzUtil
 
 __all__ = dir(_xyzUtil)
 __ignore = ['__file__', '__module__', '__name__']

@@ -8,7 +8,7 @@ def main():
     viewer = osgViewer.Viewer()
 
     # read the scene from the list of file specified commandline args.
-    loadedModel = osgDB.readNodeFiles(["cow.osg"])
+    loadedModel = osgDB.readNodeFiles(["glider.osg"])
 
     if not loadedModel:
         print ("No data loaded")
@@ -32,7 +32,7 @@ def main():
     sch.setCaptureOperation(wtf)
 
     bs = loadedModel.getBound()
-    print ("Bounding sphere = ", bs)
+    print("Bounding sphere = ", bs)
 
     simtime = 0.0
     while not viewer.done():

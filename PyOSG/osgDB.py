@@ -1,4 +1,4 @@
-import osg
+import _osg
 import _osgDB
 
 __all__ = dir(_osgDB)
