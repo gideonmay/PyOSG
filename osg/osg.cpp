@@ -1,4 +1,4 @@
-// Copyright (C) 2002-2005 Gideon May (gideon@c1016.nl)
+// Copyright (C) 2016 Gideon May (gideon@borges.xyz)
 //
 // Permission to copy, use, sell and distribute this software is granted
 // provided this copyright notice appears in all copies.

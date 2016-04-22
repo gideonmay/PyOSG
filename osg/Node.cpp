@@ -1,4 +1,4 @@
-// Copyright (C) 2002-2003 Gideon May (gideon@computer.org)
+// Copyright (C) 2016 Gideon May (gideon@borges.xyz)
 //
 // Permission to copy, use, sell and distribute this software is granted
 // provided this copyright notice appears in all copies.
@@ -9,16 +9,8 @@
 // This software is provided "as is" without express or implied warranty,
 // and with no claim as to its suitability for any purpose.
 
-#include <boost/python/class.hpp>
-#include <boost/python/call_method.hpp>
-#include <boost/python/list.hpp>
-#include <boost/python/return_value_policy.hpp>
-#include <boost/python/copy_const_reference.hpp>
-#include <boost/python/object.hpp>
-#include <boost/python/extract.hpp>
-#include <boost/python/scope.hpp>
-#include <boost/python/enum.hpp>
-#include <boost/python/iterator.hpp>
+#include <boost/python.hpp>
+
 #include <boost/ref.hpp>
 
 #include <osg/Node>

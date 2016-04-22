@@ -1,4 +1,4 @@
-// Copyright (C) 2002-2003 Gideon May (gideon@computer.org)
+// Copyright (C) 2016 Gideon May (gideon@borges.xyz)
 //
 // Permission to copy, use, sell and distribute this software is granted
 // provided this copyright notice appears in all copies.
@@ -8,29 +8,9 @@
 //
 // This software is provided "as is" without express or implied warranty,
 // and with no claim as to its suitability for any purpose.
-//
 
-#include <boost/python/module.hpp>
-#include <boost/python/class.hpp>
-#include <boost/python/call.hpp>
-#include <boost/python/tuple.hpp>
-#include <boost/python/list.hpp>
-#include <boost/python/ptr.hpp>
-#include <boost/python/return_value_policy.hpp>
-#include <boost/python/copy_const_reference.hpp>
-#include <boost/python/reference_existing_object.hpp>
-#include <boost/python/manage_new_object.hpp>
-#include <boost/python/make_function.hpp>
-#include <boost/python/object.hpp>
-#include <boost/python/implicit.hpp>
-#include <boost/python/errors.hpp>
-#include <boost/python/extract.hpp>
-#include <boost/python/operators.hpp>
-#include <boost/python/detail/api_placeholder.hpp>
-#include <boost/python/return_value_policy.hpp>
-#include <boost/python/manage_new_object.hpp>
-#include <boost/python/scope.hpp>
-#include <boost/python/enum.hpp>
+
+#include <boost/python.hpp>
 
 #include <boost/ref.hpp>
 #include <boost/lexical_cast.hpp>

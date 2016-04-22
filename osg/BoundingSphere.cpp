@@ -1,4 +1,4 @@
-// Copyright (C) 2002-2005 Gideon May (gideon@computer.org)
+// Copyright (C) 2016 Gideon May (gideon@borges.xyz)
 //
 // Permission to copy, use, sell and distribute this software is granted
 // provided this copyright notice appears in all copies.
@@ -8,8 +8,6 @@
 //
 // This software is provided "as is" without express or implied warranty,
 // and with no claim as to its suitability for any purpose.
-//
-// TODO missing expand methods
 
 #include <boost/python/class.hpp>
 

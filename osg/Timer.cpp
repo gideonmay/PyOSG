@@ -1,4 +1,4 @@
-// Copyright (C) 2002-2005 Gideon May (gideon@computer.org)
+// Copyright (C) 2016 Gideon May (gideon@borges.xyz)
 //
 // Permission to copy, use, sell and distribute this software is granted
 // provided this copyright notice appears in all copies.
@@ -9,11 +9,9 @@
 // This software is provided "as is" without express or implied warranty,
 // and with no claim as to its suitability for any purpose.
 
-#include <boost/python/class.hpp>
-#include <boost/python/return_value_policy.hpp>
-#include <boost/python/reference_existing_object.hpp>
-#include <boost/python/return_internal_reference.hpp>
-#include <boost/python/copy_non_const_reference.hpp>
+
+
+#include <boost/python.hpp>
 
 #include <string>
 #include <iostream>

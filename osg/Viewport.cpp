@@ -1,4 +1,4 @@
-// Copyright (C) 2002-2003 Gideon May (gideon@computer.org)
+// Copyright (C) 2016 Gideon May (gideon@borges.xyz)
 //
 // Permission to copy, use, sell and distribute this software is granted
 // provided this copyright notice appears in all copies.
@@ -9,9 +9,9 @@
 // This software is provided "as is" without express or implied warranty,
 // and with no claim as to its suitability for any purpose.
 
-#include <boost/python/class.hpp>
-#include <boost/python/implicit.hpp>
-#include <boost/python/tuple.hpp>
+
+
+#include <boost/python.hpp>
 
 #include <string>
 #include <iostream>
@@ -37,23 +37,22 @@ tuple getViewport(osg::Viewport * self)
 }
 #endif
 
-
-int getX(osg::Viewport *self)
+    osg::Viewport::value_type getX(osg::Viewport *self)
 {
    return self->x();
 }
 
-int getY(osg::Viewport *self)
+    osg::Viewport::value_type getY(osg::Viewport *self)
 {
    return self->y();
 }
 
-int getWidth(osg::Viewport *self)
+    osg::Viewport::value_type getWidth(osg::Viewport *self)
 {
    return self->width();
 }
 
-int getHeight(osg::Viewport *self)
+    osg::Viewport::value_type getHeight(osg::Viewport *self)
 {
    return self->height();
 }
@@ -65,7 +64,7 @@ std::string repr(osg::Viewport * self)
     return ost.str();
 }
 
-std::string str(osg::Viewport * self)
+std::string str_rep(osg::Viewport * self)
 {
     std::ostringstream ost;
     ost << "(" << self->x() << "," << self->y() << "," << self->width() << "," << self->height() << ")";
@@ -102,9 +101,8 @@ void init_Viewport()
             "viewport::computeWindowMatrix(), the ModelView and Projection Matrix can either be sourced from the\n"
             "current osg::State object, via osgUtil::SceneView or CullVisitor.\n"
             )
-        .def("__str__", &str)
+        .def("__str__", &str_rep)
         .def("__repr__", &repr)
         ;
-
 }
 } // namespace PyOSG

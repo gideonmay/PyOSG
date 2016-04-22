@@ -1,3 +1,14 @@
+// Copyright (C) 2016 Gideon May (gideon@borges.xyz)
+//
+// Permission to copy, use, sell and distribute this software is granted
+// provided this copyright notice appears in all copies.
+// Permission to modify the code and to distribute modified code is granted
+// provided this copyright notice appears in all copies, and a notice
+// that the code was modified is included with the copyright notice.
+//
+// This software is provided "as is" without express or implied warranty,
+// and with no claim as to its suitability for any purpose.
+
 #include <boost/python.hpp>
 
 #include <string>
@@ -44,7 +55,7 @@ class ObjectBase_imp : public ObjectBase {
     osg::Object* cloneType() const { return call_method<osg::Object*>(self, "cloneType"); }
     osg::Object* clone(const osg::CopyOp& copyop) const { return call_method<osg::Object*>(self, "clone", copyop); }
 
-    bool isSameKindAs(const Object* obj) const { return osg::Object::isSameKindAs(obj); }
+    bool isSameKindAs(const osg::Object* obj) const { return osg::Object::isSameKindAs(obj); }
 
     // forced implementation
     const char* libraryName() const { return "osg"; }
@@ -91,8 +102,8 @@ void init_Object()
         //    &osg::Object::getUserData, return_internal_reference<>())
         ;
     {
-        class_<ObjectBase, osg::ref_ptr<ObjectBase_imp>, bases<osg::Object>, boost::noncopyable> obj("Object_base", no_init);
-        obj
+        class_<ObjectBase, osg::ref_ptr<ObjectBase_imp>, bases<osg::Object>, boost::noncopyable> obj_base("Object_base", no_init);
+        obj_base
             .def(init<>())
             ;
     }

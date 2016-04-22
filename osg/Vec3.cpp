@@ -1,11 +1,15 @@
-#include <boost/python/class.hpp>
-#include <boost/python/operators.hpp>
-#include <boost/python/scope.hpp>
-#include <boost/python/copy_non_const_reference.hpp>
-#include <boost/python/make_constructor.hpp>
-#include <boost/python/tuple.hpp>
-#include <boost/python/extract.hpp>
-#include <boost/python/detail/api_placeholder.hpp>
+// Copyright (C) 2016 Gideon May (gideon@borges.xyz)
+//
+// Permission to copy, use, sell and distribute this software is granted
+// provided this copyright notice appears in all copies.
+// Permission to modify the code and to distribute modified code is granted
+// provided this copyright notice appears in all copies, and a notice
+// that the code was modified is included with the copyright notice.
+//
+// This software is provided "as is" without express or implied warranty,
+// and with no claim as to its suitability for any purpose.
+
+#include <boost/python.hpp>
 
 #include <osg/Vec3>
 #include <osg/Vec3d>
@@ -27,6 +31,7 @@ osg::Vec3* vec3tuple(tuple data)
         case 3: z = extract<float>(data[2]);
         case 2: y = extract<float>(data[1]);
         case 1: x = extract<float>(data[0]);
+        default: break;
     }
     return new osg::Vec3(x, y, z);
 }

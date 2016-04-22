@@ -1,4 +1,5 @@
-// Wrapper by Brett Hartshorn.  bhartshorn@opart.org
+// Copyright (C) 2016 Gideon May (gideon@borges.xyz)
+//
 // Permission to copy, use, sell and distribute this software is granted
 // provided this copyright notice appears in all copies.
 // Permission to modify the code and to distribute modified code is granted
@@ -7,6 +8,9 @@
 //
 // This software is provided "as is" without express or implied warranty,
 // and with no claim as to its suitability for any purpose.
+
+// Wrapper by Brett Hartshorn.  bhartshorn@opart.org
+
 
 #include <boost/python/def.hpp>
 

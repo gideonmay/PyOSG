@@ -1,4 +1,4 @@
-// Copyright (C) 2002-2003 Gideon May (gideon@computer.org)
+// Copyright (C) 2016 Gideon May (gideon@borges.xyz)
 //
 // Permission to copy, use, sell and distribute this software is granted
 // provided this copyright notice appears in all copies.
@@ -9,8 +9,7 @@
 // This software is provided "as is" without express or implied warranty,
 // and with no claim as to its suitability for any purpose.
 
-#include <boost/python/module.hpp>
-#include <boost/python/def.hpp>
+#include <boost/python.hpp>
 
 #include <osgUtil/Version>
 
