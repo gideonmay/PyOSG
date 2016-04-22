@@ -8,6 +8,7 @@ PYTHON_LIB_DIR=$PYTHON_DIR/lib/libpython2.7.dylib
 cmake -DPYTHON_EXECUTABLE=$PYTHON_EXE \
       -DPYTHON_INCLUDE_DIR=$PYTHON_INC_DIR \
       -DPYTHON_LIBRARY=$PYTHON_LIB_DIR \
+      -DCMAKE_CXX_FLAGS="-Wno-#pragma-messages -Wno-potentially-evaluated-expression" \
       ..
 make
 make install

@@ -7,7 +7,8 @@ IF(NOT CMAKE_BUILD_TYPE)
     #SET(CMAKE_BUILD_TYPE "MINSIZEREL")
 ENDIF()
 
-set ( CMAKE_CXX_FLAGS "-Wno-#pragma-messages -Wno-potentially-evaluated-expression")
+# voor OSX
+# set ( CMAKE_CXX_FLAGS "-Wno-#pragma-messages -Wno-potentially-evaluated-expression")
 
 PROJECT( PyOSG )
 
