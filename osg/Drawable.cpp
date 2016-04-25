@@ -147,6 +147,7 @@ class DrawCallback : public osg::Drawable::DrawCallback
     }
     virtual void drawImplementation_imp(osg::RenderInfo& info, const osg::Drawable* drawable) const
     {
+        // FIXME!
         this->osg::Drawable::DrawCallback::drawImplementation(info, drawable);
     }
   private:

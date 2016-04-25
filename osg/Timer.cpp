@@ -26,7 +26,7 @@ class Timer : public osg::Timer {
 
 Timer& instance()
 {
-    // XXX Danger Will Robinson, a static cast due to compiler error
+    // FIXME !!! XXX Danger Will Robinson, a static cast due to compiler error
     // in Apple gcc 3.3
     Timer * timer = (Timer*) const_cast<osg::Timer*>(osg::Timer::instance());
     return * timer;

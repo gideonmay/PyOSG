@@ -33,19 +33,19 @@ namespace {
 class NodeCallback : public osg::NodeCallback {
     public :
         NodeCallback(PyObject * cb) {
-            _ncallback = cb; 
-            Py_XINCREF(_ncallback);
+            _callback = cb;
+            Py_XINCREF(_callback);
         }
 
         ~NodeCallback()
         {
-            Py_XDECREF(_ncallback);
+            Py_XDECREF(_callback);
         }
 
         virtual void operator() (osg::Node * node, osg::NodeVisitor * nv)
         {
             try {
-                call_method<void>(_ncallback, "apply", ptr(node), ptr(nv));
+                call_method<void>(_callback, "apply", ptr(node), ptr(nv));
             } catch(...) {
                 handle_exception();
                 PyErr_Print();
@@ -55,7 +55,7 @@ class NodeCallback : public osg::NodeCallback {
             traverse(node, nv);
         }
     private :
-        PyObject * _ncallback;
+        PyObject * _callback;
 };
 
 
