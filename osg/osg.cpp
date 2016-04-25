@@ -238,7 +238,7 @@ void __init_osg()
 //    init_CullSettings();
 //    init_CullingSet();
 //    init_CullStack();
-//    init_DisplaySettings();
+    init_DisplaySettings();
     init_math();
     init_Vec2();
     init_Vec3();
@@ -261,12 +261,12 @@ void __init_osg()
     init_ArrayVec3();
     init_ArrayVec4();
     init_matrix();
-//    init_Drawable();
-//    init_Drawable2();
-//    init_Drawable3();
+    init_Drawable();
+    init_Drawable2();
+    init_Drawable3();
 //    init_Geometry();
 //    init_DrawPixels();
-//    init_Image();
+    init_Image();
 //    init_ImageStream();
     init_StateAttribute();
     init_Material();
@@ -313,7 +313,7 @@ void __init_osg()
 //    init_TexGenNode();
 //    init_Switch();
 //    init_Projection();
-//    init_ClearNode();
+    init_ClearNode();
 //    init_Sequence();
 //    init_ClipNode();
     init_Transform();
@@ -321,7 +321,7 @@ void __init_osg()
 //    init_MatrixTransform();
 //    init_PositionAttitudeTransform();
 //    init_AutoTransform();
-//    init_LightSource();
+    init_LightSource();
 //    init_ConvexPlanarOccluder();
 //    init_ConvexPlanarPolygon();
 //    init_Shape();

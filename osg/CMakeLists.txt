@@ -43,10 +43,17 @@ SET(TARGET_SRC
         ColorMask.cpp
         LightModel.cpp
         Light.cpp
+        ClearNode.cpp
+        DisplaySettings.cpp
+        Image.cpp
+        LightSource.cpp
+        Drawable.cpp
+        Drawable2.cpp
+        Drawable3.cpp
         Material.cpp)
 
 ADD_LIBRARY(osg SHARED ${TARGET_SRC})
-TARGET_LINK_LIBRARIES(osg ${OPENSCENEGRAPH_LIBRARIES} ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
+TARGET_LINK_LIBRARIES(osg ${OPENSCENEGRAPH_LIBRARIES} ${OPENGL_LIBRARIES} ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
 
 IF(NOT WIN32)
     # Kind of a hack but it works
